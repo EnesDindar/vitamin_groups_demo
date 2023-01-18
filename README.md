@@ -4,9 +4,9 @@
 
 ### The purpose of the app
 
-- Flutter projesine JSON import etmek.
-- Flutter ile JSON kullanmak.
-- Model dosyalari ile JSON kullanmak. 
+- Importing JSON into Flutter project.
+- Using JSON with Flutter.
+- Using JSON with model files. 
 
 
 ![vitamin_groups_demo](https://user-images.githubusercontent.com/121096106/213186032-c28c3159-dcc0-4b9a-a2f7-0f168f7bea1f.png)
