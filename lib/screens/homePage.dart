@@ -13,19 +13,24 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
-  List<dynamic> data = [];
+  late List<dynamic> data;
   @override
   void initState() {
+    data = [];
     super.initState();
-    _loadData();
+    _loadData().then((value) {
+      setState(() {
+        data = value;
+      });
+    });
   }
 
-  Future<List<vitamin>> _loadData() async {
+  Future<List<dynamic>> _loadData() async {
     String jsonString = await rootBundle.loadString('assets/data.json');
-    List<dynamic> jsonResponse = json.decode(jsonString).toList();
-    return jsonResponse.map((v) => vitamin.fromJson(v)).toList();
+    return json.decode(jsonString).toList();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -45,7 +50,7 @@ class _homePageState extends State<homePage> {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => detailPage(data: data[index])));
               },
-              child: _vitaminCard("${_loadData().then((value) => 0)}", "${data[index]["photo"]}"));
+              child: _vitaminCard("${data[index]["title"]}", "${data[index]["photo"]}"));
         }));
   }
 
