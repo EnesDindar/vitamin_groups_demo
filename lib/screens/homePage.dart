@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:vitamin_groups_demo/models/vitamin.dart';
 import 'package:vitamin_groups_demo/screens/detailPage.dart';
 
 class homePage extends StatefulWidget {
